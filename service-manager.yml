@@ -21,7 +21,6 @@ serviceManager:
     ############## CSRT Core Processes: #############
     discovery: 
       sslEnabled: false
-      discovery-client: true 
       version: "0.4.5-SNAPSHOT" 
       ports: 
         - "8761" 
@@ -29,7 +28,6 @@ serviceManager:
         - "timothys-iMac.local"
     router: 
       sslEnabled: false
-      discovery-client: true 
       version: "0.4.5-SNAPSHOT" 
       ports: 
         - "8765" 
@@ -37,7 +35,6 @@ serviceManager:
         - "timothys-iMac.local"
     query-service: 
       sslEnabled: false
-      discovery-client: true 
       version: "0.4.5-SNAPSHOT" 
       ports: 
         - "8762" 
@@ -45,26 +42,24 @@ serviceManager:
         - "timothys-iMac.local"
     self-test:
       sslEnabled: false
-      discoveryClient: true
       version: "0.4.5-SNAPSHOT"
       autoScale: 
         enabled: true
-        highResponseTimeThresholdMillis: 200
+        highResponseTimeThresholdMillis: 1000
         lowResponseTimeThresholdMillis: 5
         highMemoryThresholdPercentage: 75
         highCpuLoadThresholdPercentage: 60
         lowCpuThresholdPercentage: 5
-        maxInstances: 3
+        maxInstances: 2
         minInstances: 1
-        stableMaxIterations: 12
-        unstableMaxIterations: 12
+        stableMaxIterations: 1
+        unstableMaxIterations: 1
       ports:
         - "9090-9095"
       bootstrapHosts:
         - "timothys-iMac.local"
     merchant-locator:
       sslEnabled: false
-      discovery-client: true
       auto-scale: 
         enabled: true
         highResponseTimeThresholdMillis: 200
