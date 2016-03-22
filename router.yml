@@ -1,7 +1,11 @@
 info:
   component: Zuul Server
 
-eureka:
+webApp
+	discoveryUrl: "http://localhost:8761"
+	turbineUrl: "http://localhost:8765/hystrix/monitor?stream=http%3A%2F%2Flocalhost%3A8765%2Fhystrix.stream"
+  
+ eureka:
   instance:
     prefer-ip-address: true
   client:
@@ -17,7 +21,7 @@ logging:
     org.springframework.web: DEBUG
      
 router:
-  redisHost: 192.168.99.100
+  redisHost: localhost
   redisPort: 6379
   services:
     merchant-locator:
